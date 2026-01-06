@@ -61,7 +61,6 @@
 
 <script>
 function checkLines() {
-  // جلب النقاط
   const x1 = +document.getElementById('x1').value;
   const y1 = +document.getElementById('y1').value;
   const z1 = +document.getElementById('z1').value;
@@ -77,21 +76,17 @@ function checkLines() {
 
   const output = document.getElementById('output');
 
-  // الاتجاهات
   const v1 = [x2 - x1, y2 - y1, z2 - z1];
   const v2 = [x4 - x3, y4 - y3, z4 - z3];
 
-  //  حاصل الضرب الاتجاهي توازي
   const cross = [
     v1[1]*v2[2] - v1[2]*v2[1],
     v1[2]*v2[0] - v1[0]*v2[2],
     v1[0]*v2[1] - v1[1]*v2[0]
   ];
 
-  // هل متوازين؟
   const isParallel = cross[0] === 0 && cross[1] === 0 && cross[2] === 0;
 
-  // هل في نفس المستوى؟
   const between = [x3 - x1, y3 - y1, z3 - z1];
   const tripleProduct = 
     between[0]*cross[0] + 
