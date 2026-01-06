@@ -1,0 +1,119 @@
+body{
+    background: black;
+}
+.head #A{
+    color:green;
+    margin: auto;
+}
+.head #A:hover{
+    color: brown;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.head #B{
+    color: aqua;
+    margin: auto;
+    margin: 8px;;
+}
+input{
+    width: 100%;
+    height: 20px;;
+    outline: none;
+    border: none;
+    background:silver;
+    margin: 4px 2px;
+    border-radius: 5px;
+    padding: 7px;
+}
+input:hover{
+    background:burlywood;
+    font-size: 20px;
+    color:sienna;
+    transform: scale(1.0);
+}
+.price input{
+    width:25%;
+}
+.price small{
+    background: #ff0000;
+    border-radius:5px ;
+    border: 3px double gray;
+}
+.price small::before{
+    content: "total:";
+}
+.head #Dark{
+    position:absolute;
+    right:0px;
+    background:#ff0000;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor: pointer;
+}
+.head #light{
+    position:absolute;
+    right:0px;
+    background:#ff0000;
+    color:black;
+    border:none;
+    border-radius:5px;
+    cursor: pointer;
+}
+.hide{
+    display:none;
+    cursor: pointer;
+}
+#scro{
+    background:green;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+#logout{
+    background:green;
+    width: 100%;
+    height: 30px;
+    border:5px double gray;
+    border-radius:5px;
+    margin: 2px;
+}
+#logout:hover{
+    background-color: burlywood;
+    transform: scale(1.1);
+    font-size: medium;
+    color: blueviolet;
+    letter-spacing: 2px;
+}
+.title{
+    background:silver;
+    padding: 5px 0;
+    margin: 5px 0;
+}
+.span{
+    color: yellow;
+}
+.square{
+    width: 80px;
+    height: 80px;
+    background:silver ;
+    float: left;
+    margin:2px;
+    font-size: 50px;
+}
+.square:hover{
+    background:sandybrown ;
+    cursor: pointer;
+}
+h2{
+    color: aquamarine;
+    text-align: center;
+}
+h2:hover{
+    color: blueviolet;
+    font-size: 32px;
+}

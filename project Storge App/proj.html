@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <heat>
+        <meta charset="utf-8">
+        <meta name="description" content="Storage Shop" />
+        <title>Storage</title>
+        <link rel="stylesheet" href="CSS/proj.css"/>
+    </heat>
+    <body>
+        <div class="Zamazon">
+            <button id="Dark" class="hide">Dark</button>
+            <button id="light" >light</button>
+            <div class="head">
+                <center>               
+                <h1 class="title" id="A">Storage</h1>
+                <p id="B">Product Managment System</p>
+                </center>
+            </div>
+            <div class="input item">
+                <input type="text" id="title" placeholder="title">
+                <div class="price">
+                    <input onkeyup="getTotal()" type="number" id="Price" placeholder="price">
+                    <input onkeyup="getTotal()" type="number" id="taxes" placeholder="taxes">
+                    <input onkeyup="getTotal()" type="number" id="discount" placeholder="discount">
+                    <small id="total"></small>
+                </div>
+                <input type="number" id="count" placeholder="count"><br>
+                <input type="text" id="category"placeholder="category"><br>
+                <button id="create">Create</button>
+            </div>
+            <div class="output">
+                <div class="search">
+                    <input onkeyup="searchData(this.value)" type="text" id="Search" placeholder="Search">
+                    <div class="Asearch">
+                        <button onclick="getSearchMood(this.id)" id="searchTitle">Search By Title</button>
+                        <button onclick="getSearchMood(this.id)" id="searchCategory">Search By Catagory</button>
+                    </div>
+                </div>
+            </div>
+            <div id="Delete">
+            </div>
+                <table>
+                <thead id="thead">
+                    <tr><th>ID</th><th>TITLE</th><th>PRICE</th><th>TAXES</th><th>DISCOUNT</th><th>TOTAL</th><th>CATEGORY</th><th>UPDATE</th><th>DELETE</th></tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+                </table>
+            </div>
+        </div>
+        <button id="scro">^</button>
+        <button id="logout" onclick="loggedout()">log out</button>
+        <h2>play in space</h2>
+        <div class="game">
+            <div class="titel2"><span>X O</span> Game </div>
+            <div class="square" id="item1"onclick="game(this.id)"></div>
+            <div class="square" id="item2"onclick="game(this.id)"></div>
+            <div class="square" id="item3"onclick="game(this.id)"></div>
+    
+            <div class="square" id="item4"onclick="game(this.id)"></div>
+            <div class="square" id="item5"onclick="game(this.id)"></div>
+            <div class="square" id="item6"onclick="game(this.id)"></div>
+    
+            <div class="square" id="item7"onclick="game(this.id)"></div>
+            <div class="square" id="item8"onclick="game(this.id)"></div>
+            <div class="square" id="item9"onclick="game(this.id)"></div>
+        </div>
+        <script src="JS/proj.js"></script>
+    </body>
+</html>

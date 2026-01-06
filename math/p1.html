@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<heat>
+    <meta charset="utf-8">
+    <meta name="description" content="Determine whether a given serise is an arithmetic series or geometric series" />
+    <title> cheack & calculate equation </title>
+    <style>
+        body{
+            background-color:darkgrey;
+        }
+        h1{
+            color:blueviolet;
+        }
+        h1:hover{
+            cursor: pointer;
+            font-size: 30px;
+            color:green;
+        }
+        input[id="Input"]{
+            background: 3px solid brown;
+            border-color:#ff6a00;
+        }
+        input[id="Input"]:hover{
+            cursor: pointer;
+            font-size: 22px;
+            background: solid rgb(155, 42, 165);
+        }
+        button{
+            background: 3px solid brown;
+            border-color:#ff6a00;
+        }
+        button:hover{
+            cursor: pointer;
+            font-size: 22px;
+            background: solid rgb(155, 42, 165);
+        }
+    </style>
+</heat>
+<body>
+    <center>
+        <h1>MATH</h1>
+        <label>Enter a series (comma separated):</label><br><br>
+        <input type="text" id="Input" placeholder="..,2,4,6,8,10"><br><br>
+        <button onclick="calculateSeries()">Calculate</button>
+        <div id="output"></div>
+    </center>
+    <script src="p1.js"></script>
+</body>
+</html>

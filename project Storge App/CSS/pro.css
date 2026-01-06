@@ -1,0 +1,154 @@
+#login{
+    width: 550px;
+    height: 580px;
+    background:darkgray;
+    border: 5px double gray;
+    border-radius: 5px;
+}
+#login img{
+    width:400px;
+    height: 350px;
+    display: block;
+    transition: 0.4s;
+}
+#js{
+    color:green;
+}
+#js:hover{
+    color: brown;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input{
+    width: 200px;
+    height: 10px;;
+    outline: none;
+    border: none;
+    background:silver;
+    margin: 4px 2px;
+    border-radius: 5px;
+    padding: 7px;
+}
+input:hover{
+    background:burlywood;
+    font-size: 20px;
+    color:sienna;
+    transform: scale(1.0);
+    border: 4px double green;
+}
+#click{
+    
+    width: 100px;
+    height: 30px;
+    border-radius:10px ;
+    border: none;
+    margin:3px;
+    padding: 7px;
+    color: aqua;
+    background:seagreen ;
+    cursor:pointer ;
+}
+#click:hover{
+    background-color: burlywood;
+    transform: scale(1.1);
+    font-size: medium;
+    color: blueviolet;
+    letter-spacing: 1px;
+}
+/*
+#A{
+display:flex;
+justify-content: space-between;
+}
+*/
+#clic{
+    width: 100px;
+    height: 30px;
+    border-radius:10px ;
+    border: none;
+    margin:3px;
+    padding: 7px;
+    color: aqua;
+    background:seagreen ;
+    cursor:pointer ;
+}
+#clic:hover{
+    background-color: burlywood;
+    transform: scale(1.1);
+    font-size: medium;
+    color: blueviolet;
+    letter-spacing: 1px;
+}
+label{
+    color:green;
+}
+body{
+    background:black;
+}
+#Dark{
+    position:fixed;
+    top:0;
+    right:0;
+    background:#ff0000;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor: pointer;
+}
+#light{
+    position:fixed;
+    top:0;
+    right:0;
+    background:#ff0000;
+    color:black;
+    border:none;
+    border-radius:5px;
+    cursor: pointer;
+}
+.hide{
+    display:none;
+}
+#a {
+    height: 60px;
+    width: 60px;
+    background: #ff0000;
+    animation-name: squre;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    /*animation: squre 5s linear 1s infinite alternate both ;*/
+}
+@keyframes squre{
+    0%{
+        translate:0 0;
+        background:aqua;
+        rotate: 0;
+    }
+    25%{
+        translate:0 626px;
+        background:rgb(229, 255, 0);
+        rotate: 90deg;
+    }
+    50%{
+        translate:1447px 626px;
+        background:rgb(0, 255, 89);
+        rotate: 180deg;
+    }
+    75%{
+        translate:1447px 0;
+        background:rgb(153, 0, 255);
+        rotate: 270deg;
+    }
+    100%{
+        translate:0 0;
+        background:rgb(255, 0, 187);
+        rotate: 360deg;
+    }
+}
+div:hover{
+    animation-play-state: paused;
+    cursor:pointer;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="information about HTML" />
+    <title> HTML </title>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="St.css">
+</head>
+<body>
+    <h1> Zamazon </h1>
+    <p>
+        i <b><u>love</u></b> you <em>user & </em> i <ins>hope</ins> you <strong>succes</strong>.<br />
+        <s dir="ltr"> dodo </s>*<del dir="ltr"> قمر يا </del> <i>i like you </i>.<br />
+        my name is:<sub>Ahmed hisham </sub> i love <sup>JS & HTML & CSS </sup> <mark>demo</mark>.
+    </p>
+    <font color="brown" size="5" face="arial"> iam tired </font>
+    <center><font color="red" size="6"> بحبك </font></center>
+    <table border="1" align="center">
+        <tr><th> cars  </th><th> model</th> <th> color </th></tr>
+        <tr><td> BMW </td><td> 2020 & 2021</td> <td>red & Black</td></tr>
+        <tr><td> FRARY </td><td>2018 & 2020</td> <td> Black</td></tr>
+        <tr><td> MARZEDS </td><td>2017:2020</td> <td> Black</td></tr>
+    </table>
+    <br />
+    <table border="1">
+        <tr><th colspan="2"> cars  </th></tr>
+        <tr><td> BMW </td><td rowspan="2"> 2020 & 2021</td></tr>
+        <tr><td> FRARY </td><td></td></tr>
+        <tr><td> MARZEDS </td><td>2017:2020</td></tr>
+    </table>
+    <br />
+    <table id="1" border="1">
+        <thead> <tr bgcolor="brown"><th colspan="2">Names</th></tr> </thead>
+        <tbody>
+            <tr><td> Ahmed </td><td rowspan="2"> 90 </td></tr>
+            <tr><td> saad </td></tr>
+            <tr><td> Mo </td><td> 70 </td></tr>
+        </tbody>
+        <tfoot>
+            <tr><td colspan="2"> 250 </td></tr>
+        </tfoot>
+    </table>
+    <a href="C:\Users\demor\OneDrive\Desktop\javescript/New Text Document.html" target="_blank">page2</a><br />
+    <a href="https://www.fb.com" target="_blank">facebook</a><br />
+    <center><img src="wallpaperflare.com_wallpaper (5).jpg" /></center>
+    <br />
+    <video src="D:\D-Dsic\my album/VID-20231226-WA0027.mp4" width="400" controls
+           poster="wallpaperflare.com_wallpaper (5).jpg"></video>
+    <audio src="D:\D-Dsic\music/01-Our-Song.mp3" controls muted preload="auto"></audio>
+    <br />
+    Do You.........?
+    <ol type="I">
+        <li>Ahmed</li>
+        <li>Saad</li>
+        <li>Kreem</li>
+    </ol>
+    <br />
+    Do You.........?
+    <ul type="circle">
+        <li>Ahmed</li>
+        <li>Saad</li>
+        <li>Kreem</li>
+    </ul>
+    <dl>
+        <dt>Do You.........?</dt>
+        <dd>Ahmed</dd>
+        <dd>Saad</dd>
+        <dd>kreem</dd>
+    </dl>
+    <details>
+        <summary>title</summary>
+        <p> HTML </p>
+        <p> CSS </p>
+        <p> JS </p>
+        <img src="wallpaperflare.com_wallpaper (5).jpg" width="200" alt="photo" />
+    </details>
+    <br />
+    <embed src="D:\D-Dsic\orcale Ahmed/orcale word.pdf" width='400' height="400" />
+    <br /><br />
+    <center><embed src="Beautiful Fountains.gif" width="200" height="200" /></center><br />
+    <embed src="C:\Users\demor\OneDrive\Desktop\javescript\practice/practice.html" width="100%" /><br /><br />
+    <iframe src="Beautiful Fountains.gif" height="200" width="200"></iframe><br />
+    <input type="button" value="click" />
+    <input type="submit" />
+    <input type="reset" />
+    <button type="submit"> click here </button><br />
+    <input type="text" placeholder="password" />
+    <br />    <br />     <br />
+    <form>
+        <label> Email:) </label><br />
+        <input type="email" placeholder="Email" /><br />
+        <label> Password:) </label><br />
+        <input type="password" placeholder="password" /><br />
+        <label> telephone:) </label><br />
+        <input type="tel" placeholder="Telephone Number " /><br />
+        <button> click2 </button>
+    </form>
+    <form>
+        <h2> whats your gender:) </h2>
+        <label> Male </label>
+        <input type="radio" value="Male" name="a" />
+        <label> Female</label>
+        <input type="radio" value="female" name="a" />
+        <input type="checkbox" />  Are you sure<br />
+        <label>Footboll</label>
+        <input type="radio" checked value="footboll"/>
+        <button type="submit"> Submit </button>
+        <hr />
+        <textarea> I love HTML,CSS,JS </textarea>
+        <hr />
+        <div class="Ahmed">
+            <p>Ahmed</p>
+            <p>hisham</p>
+        </div>
+    </form>
+    <script>
+
+    </script>
+</body>
+
+</html>

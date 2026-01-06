@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <meta charset="UTF-8">
+    <title>Axis Classifier</title>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input {
+      padding: 8px;
+      margin: 5px;
+    }
+    input:hover{
+            padding: 20px;
+            margin: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: rgb(139, 246, 246);  
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <center><h2>Axis Classifier</h2>
+  
+  <label for="PointsInput">Enter points (e.g. (0,0),(4,0),(0,5),(3,3)):</label><br>
+  <input type="text" id="PointsInput" size="60"><br>
+  <button onclick="classifyPoints()">Classify</button>
+  <div class="result" id="Output"></div></center>
+  <script>
+    function classifyPoints() {
+      const input = document.getElementById("PointsInput").value;
+      const output = document.getElementById("Output");
+      output.innerHTML = "";
+
+      const pointRegex = /\((-?\d+),\s*(-?\d+)\)/g; //حاجه بتهندل بدلا من اطول في كود 
+      const matches = input.matchAll(pointRegex);
+
+      for (const match of matches) {
+        const x = parseInt(match[1]);
+        const y = parseInt(match[2]);
+        let classification = "";
+
+        if (x === 0 && y === 0) {
+          classification = "Origin";
+        } else if (y === 0) {
+          classification = "X-axis ";
+        } else if (x === 0) {
+          classification = "Y-axis";
+        } else {
+          classification = "Not on any axis";
+        }
+
+        output.innerHTML += `<p>Point (${x}, ${y}): <strong>${classification}</strong></p>`;
+      }
+    }
+  </script>
+
+</body>
+</html>

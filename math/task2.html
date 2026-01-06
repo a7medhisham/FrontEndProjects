@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <title>Line Relationship Classifier</title>
+<head>
+  <style>
+    body {
+        font-family: Arial;
+        padding: 20px; }
+    input{
+        margin: 5px;
+        padding: 8px;
+    }
+    input:hover{
+        margin: 10px;
+        padding: 15px;
+    }
+    button:hover{
+        background-color: rgb(55, 175, 175);
+    }
+     button {
+         margin: 5px;
+         padding: 8px; }
+    .result {
+         margin-top: 15px;
+         font-weight: bold; }
+         #cc:hover{
+          background-color: blueviolet;
+          cursor: pointer;
+          margin: 10px;
+          padding: 15px;
+         }
+  </style>
+</head>
+<body>
+<center>
+    <h2 id="cc">Classify the Relationship Between Two Lines</h2></br>
+    <p>Enter 4 points (each line defined by two points):</p></br>
+</center>
+<center>
+  <label>"Line1"</label></br>
+<input id="x1" placeholder="x1">
+<input id="y1" placeholder="y1">
+<input id="z1" placeholder="z1"><br>
+
+<input id="x2" placeholder="x2">
+<input id="y2" placeholder="y2">
+<input id="z2" placeholder="z2"><br>
+  <label>"Line2"</label></br>
+<input id="x3" placeholder="x3">
+<input id="y3" placeholder="y3">
+<input id="z3" placeholder="z3"><br>
+
+<input id="x4" placeholder="x4">
+<input id="y4" placeholder="y4">
+<input id="z4" placeholder="z4"><br>
+</center>
+<center><button onclick="checkLines()">Classify Relationship</button></center>
+
+<div class="result" id="output"></div>
+
+<script>
+function checkLines() {
+  // جلب النقاط
+  const x1 = +document.getElementById('x1').value;
+  const y1 = +document.getElementById('y1').value;
+  const z1 = +document.getElementById('z1').value;
+  const x2 = +document.getElementById('x2').value;
+  const y2 = +document.getElementById('y2').value;
+  const z2 = +document.getElementById('z2').value;
+  const x3 = +document.getElementById('x3').value;
+  const y3 = +document.getElementById('y3').value;
+  const z3 = +document.getElementById('z3').value;
+  const x4 = +document.getElementById('x4').value;
+  const y4 = +document.getElementById('y4').value;
+  const z4 = +document.getElementById('z4').value;
+
+  const output = document.getElementById('output');
+
+  // الاتجاهات
+  const v1 = [x2 - x1, y2 - y1, z2 - z1];
+  const v2 = [x4 - x3, y4 - y3, z4 - z3];
+
+  //  حاصل الضرب الاتجاهي توازي
+  const cross = [
+    v1[1]*v2[2] - v1[2]*v2[1],
+    v1[2]*v2[0] - v1[0]*v2[2],
+    v1[0]*v2[1] - v1[1]*v2[0]
+  ];
+
+  // هل متوازين؟
+  const isParallel = cross[0] === 0 && cross[1] === 0 && cross[2] === 0;
+
+  // هل في نفس المستوى؟
+  const between = [x3 - x1, y3 - y1, z3 - z1];
+  const tripleProduct = 
+    between[0]*cross[0] + 
+    between[1]*cross[1] + 
+    between[2]*cross[2];
+
+  let result = "";
+
+  if (tripleProduct !== 0) {
+    result = "The lines are Skew (not in the same plane)";
+  } else {
+    const dot = v1[0]*v2[0] + v1[1]*v2[1] + v1[2]*v2[2];//تعامد 
+    const isPerpendicular = dot === 0;
+
+    if (isParallel) {
+      result = "The lines are Parallel";
+    } else if (isPerpendicular) {
+      result = "The lines are Perpendicular";
+    } else {
+      result = "The lines Intersect";
+    }
+  }
+
+  output.innerText = result;
+}
+</script>
+
+</body>
+</html>

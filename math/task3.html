@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Perceptron Trainer</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f9fc;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 900px;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    label {
+        margin-top: 10px;
+        display: block;
+        font-weight: bold;
+    }
+    select, input {
+        padding: 6px;
+        margin: 4px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 15px;
+    }
+    table, th, td {
+        border: 1px solid #ccc;
+    }
+    th {
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px;
+        text-align: center;
+    }
+    td {
+        padding: 6px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1> Network training to do all the compenasional</h1>
+
+    <label for="gate">choose gates :D</label>
+    <select id="gate">
+        <option value="AND">AND</option>
+        <option value="OR">OR</option>
+        <option value="NAND">NAND</option>
+        <option value="NOR">NOR</option>
+        <option value="ANDNOT">ANDNOT</option>
+        <option value="XOR">XOR</option>
+    </select>
+
+    <label>Threshold:</label>
+    <input type="number" id="threshold" step="0.1" value="0.5">
+
+    <label>Learning Rate:</label>
+    <input type="number" id="lr" step="0.1" value="0.1">
+
+    <label>Weight 1:</label>
+    <input type="number" id="w1" step="0.1" value="0">
+
+    <label>Weight 2:</label>
+    <input type="number" id="w2" step="0.1" value="0">
+
+    <br>
+    <button onclick="train()">Start training</button>
+
+    <div id="output"></div>
+</div>
+
+<script>
+function getTruthTable(gate) {
+    switch (gate) {
+        case "AND": return [ [0,0,0],[0,1,0],[1,0,0],[1,1,1] ];
+        case "OR":  return [ [0,0,0],[0,1,1],[1,0,1],[1,1,1] ];
+        case "NAND":return [ [0,0,1],[0,1,1],[1,0,1],[1,1,0] ];
+        case "NOR": return [ [0,0,1],[0,1,0],[1,0,0],[1,1,0] ];
+        case "ANDNOT": return [ [0,0,0],[0,1,0],[1,0,1],[1,1,0] ];
+        case "XOR": return [ [0,0,0],[0,1,1],[1,0,1],[1,1,0] ];
+    }
+}
+
+function train() {
+    const gate = document.getElementById("gate").value;
+    let T = parseFloat(document.getElementById("threshold").value);
+    let lr = parseFloat(document.getElementById("lr").value);
+    let w1 = parseFloat(document.getElementById("w1").value);
+    let w2 = parseFloat(document.getElementById("w2").value);
+
+    const table = getTruthTable(gate);
+    let outputHTML = "<table><tr><th>Epoch</th><th>X1</th><th>X2</th><th>Desired output</th><th>W1</th><th>W2</th><th>Net</th><th>Actual output</th><th>Error (d-y)</th><th>New W1</th><th>New W2</th></tr>";
+
+    let epoch = 1;
+    let trained = false;
+
+    while (!trained && epoch < 100) {
+        trained = true;
+        for (let i = 0; i < table.length; i++) {
+            let [x1, x2, d] = table[i];
+            let net = (x1 * w1) + (x2 * w2);
+            let y = activation(net, T);
+            let error = d-y;
+            let newW1 = w1 + lr * (d - y) * x1;
+            let newW2 = w2 + lr * (d - y) * x2;
+
+            outputHTML += `<tr>
+                <td>${epoch}</td><td>${x1}</td><td>${x2}</td><td>${d}</td>
+                <td>${w1.toFixed(2)}</td><td>${w2.toFixed(2)}</td>
+                <td>${net.toFixed(2)}</td><td>${y}</td><td>${error}</td>
+                <td>${newW1.toFixed(2)}</td><td>${newW2.toFixed(2)}</td>
+            </tr>`;
+
+            if (y !== d) {
+                trained = false;
+                w1 = newW1; w2 = newW2;
+            }
+        }
+        epoch++;
+    }
+
+    outputHTML += "</table>";
+    document.getElementById("output").innerHTML = outputHTML;
+}
+
+function activation(net, T) {
+    const eps = 1e-9;
+    return (net + eps) >= T ? 1 : 0;
+}
+</script>
+</body>
+</html>
+
+
+

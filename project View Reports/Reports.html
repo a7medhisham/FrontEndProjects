@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <heat>
+        <meta charset="utf-8">
+        <meta name="description" content="ADV DB" />
+        <title>REPORT</title>
+        <link rel="stylesheet" href="CSS/proj.css"/>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                direction: rtl;
+                text-align: center;
+                padding: 20px;
+            }
+            .button-container {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap;
+                margin-bottom: 20px;
+            }
+            .report-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            }
+            .report-content {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: auto;
+            width: 60%;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            }
+            iframe {
+                width: 100%;
+                height: 600px;
+                margin-top: 20px;
+                display: block; 
+                border: 1px solid #ccc;
+                border-radius: 8px;
+            }
+        </style>    
+    </heat>
+        <body>
+            <div class="Ahmed.H">
+                <button id="Dark" class="hide">Dark</button>
+                <button id="light" >light</button>
+                <div class="head">
+                    <center>               
+                    <h1 class="title" id="A">TASK</h1>
+                    <p id="B">REPORTS</p>
+                    </center>
+            </div>
+            <h2>VIEW REPORTS:D</h2>
+
+            <div class="button-container">
+                <button class="report-button" onclick="showReport(1)">REPORT1</button>
+                <button class="report-button" onclick="showReport(2)">REPORT2</button>
+                <button class="report-button" onclick="showReport(3)">REPORT3</button>
+                <button class="report-button" onclick="showReport(4)">REPORT4</button>
+                <button class="report-button" onclick="showReport(5)">REPORT5</button>
+            </div>
+
+            <div id="reportArea" class="report-content">
+                <p>Choose REPORT</p>
+            </div>
+            <button id="scro">^</button>
+            <button id="logout" onclick="loggedout()">log out</button>
+            <script src="JS/proj2.js"></script>
+        </body>
+</html>
